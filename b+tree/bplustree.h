@@ -11,9 +11,12 @@ class bplustree
 		int size();
 	private:
 		//Header Record Variables
-		int hSize;
+		int headerSize;
 		int recordCount;
 		int recordSize;
+		int fieldsPerRecord;
+
+		std::string description;
 		bool insterFlag;
 
 
