@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="bplustree.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="reee.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
