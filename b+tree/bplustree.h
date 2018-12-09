@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+using namespace std;
 class bplustree
 {
 	private:
@@ -15,10 +17,11 @@ class bplustree
 		int totalNumRecords;//total number of records
 		int sizeofRecords;
 		int numFieldsPerRecord;
-		// String variable
-		std::string description;
-		std::string time;
-		std::string lastMod;
+		
+		 //String variable
+		string description;
+		string time;
+		string lastMod;
 	public:
 		bplustree();
 		bool insert();
@@ -26,5 +29,38 @@ class bplustree
 		bool checkEmpty();
 		bool isPresent();
 		int size();
+		bool headerToFile();
+
+	struct node {
+		vector<node>* leftChilds;
+		vector<node>* rightChilds;
+		vector<node>* roots;
+		int value;
+	
+		vector<node>* getLeftChild() {
+			return this->leftChilds;
+		}
+		vector<node>* getRightChild() {
+			return this->rightChilds;
+		}
+		vector<node>* getRoots() {
+			return this->roots;
+		}
+		int getValue() {
+			return this->value;
+		}
+		void setRoots(vector<node>* newRoots) {
+			this->roots = newRoots;
+		}
+		void setLeftChilds(vector<node>* newLefts) {
+			this->leftChilds = newLefts;
+		}
+		void setRightChilds(vector<node>* newRights) {
+			this->rightChilds = newRights;
+		}
+		int setValue(int newValue) {
+			this->value = newValue;
+		}
+	};
 };
 
