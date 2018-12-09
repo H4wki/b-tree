@@ -4,17 +4,19 @@
 using namespace std;
 bplustree::bplustree() 
 {
-	this->totalNumRecords = 1;
-	this->blockSize = 2;
-	this->totalBlocks = 3;
-	this->numAvalBlocks = 4;
-	this->numOfLevels = 5;
-	this->rbnRoot = 6;
-	this->rbnLevels = 7;
-	this->rbnAvailList = 8;
-	this->sizeofRecords = 9;
-	this->numFieldsPerRecord = 10;
-
+	this->headerSize = 0;
+	this->blockSize = 1;
+	this->totalNumRecords =2;
+	this->blockSize = 3;
+	this->totalBlocks = 4;
+	this->numAvalBlocks = 5;
+	this->numOfLevels = 6;
+	this->rbnRoot = 7;
+	this->rbnLevels = 8;
+	this->rbnAvailList = 9;
+	this->sizeofRecords = 10;
+	this->numFieldsPerRecord = 11;
+	
 }
 int bplustree::size() {
 	return this->totalNumRecords;
@@ -34,7 +36,7 @@ bool bplustree::isPresent() {
 bool bplustree::headerToFile() {
 	ofstream myfile;
 	myfile.open("test.txt");
-	myfile << this->totalNumRecords << "|" << this->blockSize << "|" << this->totalBlocks << "|" << this->numAvalBlocks << "|" << this->numOfLevels << "|" << this->rbnAvailList << "|" << this->rbnLevels << "|" << this->rbnRoot << "|";
+	myfile << this->headerSize << "|" << this->blockSize << "|" << this->totalBlocks << "|" << this->numAvalBlocks << "|" << this->numOfLevels << "|" << this->rbnAvailList << "|" << this->rbnLevels << "|" << this->rbnRoot << "|";
 	myfile.close();
 	return true;
 }
