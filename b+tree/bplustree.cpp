@@ -11,7 +11,7 @@ bplustree::bplustree()
 	this->totalBlocks = 4;
 	this->numAvalBlocks = 5;
 	this->numOfLevels = 6;
-	this->rbnRoot = 7;
+	this->rbnRoot = 7; // RBN of root is first item after header then it is avail list seqence 
 	this->rbnLevels = 8;
 	this->rbnAvailList = 9;
 	this->sizeofRecords = 10;
@@ -21,7 +21,12 @@ bplustree::bplustree()
 int bplustree::size() {
 	return this->totalNumRecords;
 }
-bool bplustree::insert() {
+bool bplustree::insert(int insertE) {
+	if (this->totalNumRecords == 0) {
+		bucket tempB=bucket(this->blockSize);
+		
+
+	}
 	return false;
 }
 bool bplustree::remove() {
@@ -39,4 +44,7 @@ bool bplustree::headerToFile() {
 	myfile << this->headerSize << "|" << this->blockSize << "|" << this->totalBlocks << "|" << this->numAvalBlocks << "|" << this->numOfLevels << "|" << this->rbnAvailList << "|" << this->rbnLevels << "|" << this->rbnRoot << "|";
 	myfile.close();
 	return true;
+}
+int bplustree::getBlockSize() {
+	return this->blockSize;
 }

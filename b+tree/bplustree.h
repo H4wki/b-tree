@@ -24,43 +24,51 @@ class bplustree
 		string lastMod;
 	public:
 		bplustree();
-		bool insert();
+		bool insert(int insertE);
 		bool remove();
 		bool checkEmpty();
 		bool isPresent();
 		int size();
 		bool headerToFile();
+		int getBlockSize();
 
-	struct node {
-		vector<node>* leftChilds;
-		vector<node>* rightChilds;
-		vector<node>* roots;
-		int value;
-	
-		vector<node>* getLeftChild() {
-			return this->leftChilds;
+	//struct node {
+	//		 
+	//	};
+	struct bucket {
+		vector<bucket>* leftChild;
+		vector<bucket>* rightChild;
+		bucket* parent;
+		vector<int> items;
+		
+
+		bucket(int listSize) {
+			this->items.size == listSize;
+
 		}
-		vector<node>* getRightChild() {
-			return this->rightChilds;
+		vector<bucket>* getLeftChild() {
+			return this->leftChild;
 		}
-		vector<node>* getRoots() {
-			return this->roots;
+		vector<bucket>* getRightChild() {
+			return this->rightChild;
 		}
-		int getValue() {
-			return this->value;
+		bucket* getParent() {
+			return this->parent;
 		}
-		void setRoots(vector<node>* newRoots) {
-			this->roots = newRoots;
+		bool add(int newItem) {
+			if(this->items.end)
 		}
-		void setLeftChilds(vector<node>* newLefts) {
-			this->leftChilds = newLefts;
+		void setRoots(bucket* newRoot) {
+			this->parent = newRoot;
 		}
-		void setRightChilds(vector<node>* newRights) {
-			this->rightChilds = newRights;
+		void setLeftChilds(bucket* newLefts) {
+			this->leftChild = newLefts;
 		}
-		int setValue(int newValue) {
-			this->value = newValue;
+		void setRightChilds(bucket* newRights) {
+			this->rightChild = newRights;
 		}
 	};
+
+
 };
 
