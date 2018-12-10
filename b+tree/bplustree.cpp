@@ -23,7 +23,7 @@ int bplustree::size() {
 }
 bool bplustree::insert(int insertE) {
 	if (this->totalNumRecords == 0) {
-		bucket tempB=bucket(this->blockSize);
+		bucket tempB=bucket(this->blockSize, NULL);
 		
 
 	}

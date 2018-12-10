@@ -40,10 +40,13 @@ class bplustree
 		vector<bucket>* rightChild;
 		bucket* parent;
 		vector<int> items;
+		int size;
+		
 		
 
-		bucket(int listSize) {
-			this->items.size == listSize;
+		bucket(int size,bucket* par) {
+			this->parent = par;
+			this->size = size;
 
 		}
 		vector<bucket>* getLeftChild() {
@@ -56,15 +59,22 @@ class bplustree
 			return this->parent;
 		}
 		bool add(int newItem) {
-			if(this->items.end)
+			/*if (items.size() != this->size) {
+				for (int i = 0; i < this->size - 1;i++) {
+					if (items.at(i) > newItem) {
+						return true;
+					}
+				}
+			}*/
+			return false;
 		}
 		void setRoots(bucket* newRoot) {
 			this->parent = newRoot;
 		}
-		void setLeftChilds(bucket* newLefts) {
+		void setLeftChilds(vector<bucket>* newLefts) {
 			this->leftChild = newLefts;
 		}
-		void setRightChilds(bucket* newRights) {
+		void setRightChilds(vector<bucket>* newRights) {
 			this->rightChild = newRights;
 		}
 	};
