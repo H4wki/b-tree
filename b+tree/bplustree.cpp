@@ -4,6 +4,7 @@
 using namespace std;
 bplustree::bplustree() 
 {
+
 	this->headerSize = 0;
 	this->blockSize = 1;
 	this->totalNumRecords =2;
